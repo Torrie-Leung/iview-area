@@ -36,6 +36,14 @@
                     <Button @click="handleStart">Start View UI</Button>
                 </h2>
             </Col>
+            <Col span="18" size="small">
+                <Steps :current="1">
+                    <Step title="已完成" content="这里是该步骤的描述信息"></Step>
+                    <Step title="进行中" content="这里是该步骤的描述信息"></Step>
+                    <Step title="待进行" content="这里是该步骤的描述信息"></Step>
+                    <Step title="待进行" content="这里是该步骤的描述信息"></Step>
+                </Steps>
+            </Col>
         </Row>
     </div>
 </template>
