@@ -6,8 +6,10 @@ import Util from './libs/util';
 import App from './app.vue';
 import 'view-design/dist/styles/iview.css';
 
-import { Button } from 'view-design';
-import { Steps } from 'view-design';
+import { 
+    Button,
+    Steps 
+    } from 'view-design';
 Vue.component('Button', Button);
 Vue.component('Steps', Steps);
 
