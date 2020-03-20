@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import ViewUI from 'view-design';
+// import ViewUI from 'view-design';
 import VueRouter from 'vue-router';
 import Routers from './router';
 import Util from './libs/util';
@@ -12,6 +12,7 @@ Vue.component('Button', Button);
 Vue.component('Steps', Steps);
 
 Vue.use(VueRouter);
+const ViewUI = require('view-design')
 Vue.use(ViewUI);
 
 // 路由配置
