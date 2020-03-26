@@ -33,7 +33,10 @@
                 </h1>
                 <h2>
                     <p>Welcome to your View UI app!</p>
-                    <Button @click="handleStart">Start View UI</Button>
+                    <router-link to="/p1">
+                        <Button @click="handleStart">Start View UI</Button>
+                    </router-link>
+                    
                 </h2>
             </Col>
             <Col span="18" size="small">
