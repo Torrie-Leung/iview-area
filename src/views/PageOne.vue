@@ -38,7 +38,26 @@
           </Switch>
         </Col>
       </Row>
-        
+      <Row>
+        <Col span="24">
+          <Carousel v-model="carouselValue" loop class="caro" style="height: 300px">
+            <CarouselItem>
+              <div class="demo-carousel">1</div>
+            </CarouselItem>
+            <CarouselItem>
+              <div class="demo-carousel">2</div>
+            </CarouselItem>
+            <CarouselItem>
+              <div class="demo-carousel">3</div>
+            </CarouselItem>
+            <CarouselItem>
+              <div class="demo-carousel">4</div>
+            </CarouselItem>
+          </Carousel>
+        </Col>
+      </Row>
+      
+      
         
     </Menu>
   </div>
@@ -50,7 +69,8 @@
     data() {
       return {
         theme: 'dark',
-        switchDefault: false
+        switchDefault: false,
+        carouselValue: 0
       }
     },
     methods: {
@@ -63,8 +83,11 @@
   }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .ivu-col-span-2 {
   padding-left: 25px;
+}
+.caro .ivu-carousel-list{
+  height: 250px;
 }
 </style>
