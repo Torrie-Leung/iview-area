@@ -1,7 +1,9 @@
 <template>
   <div>
     <Menu mode="horizontal" :theme="theme" active-name="1">
-        <MenuItem name="1">
+      <Row>
+        <Col span="22">
+          <MenuItem name="1">
             <Icon type="ios-paper" />
             内容管理
         </MenuItem>
@@ -28,10 +30,16 @@
             <Icon type="ios-construct" />
             综合设置
         </MenuItem>
-        <Switch size="large" v-model="switchDefault" @on-change="changeTheme">
+        </Col>
+        <Col span="2">
+          <Switch size="large" v-model="switchDefault" @on-change="changeTheme">
             <span slot="open">明亮</span>
             <span slot="close">暗黑</span>
-        </Switch>
+          </Switch>
+        </Col>
+      </Row>
+        
+        
     </Menu>
   </div>
 </template>
@@ -56,9 +64,7 @@
 </script>
 
 <style lang="less" scoped>
-.ivu-switch-large{
-  float: right;
-  top: 20px;
-  right: 5px;
+.ivu-col-span-2 {
+  padding-left: 25px;
 }
 </style>
