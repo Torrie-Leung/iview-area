@@ -6,12 +6,12 @@ import Util from './libs/util';
 import App from './app.vue';
 import 'view-design/dist/styles/iview.css';
 
-import { 
-    Button,
-    Steps 
-    } from 'view-design';
-Vue.component('Button', Button);
-Vue.component('Steps', Steps);
+// import { 
+//     Button,
+//     Steps 
+//     } from 'view-design';
+// Vue.component('Button', Button);
+// Vue.component('Steps', Steps);
 
 Vue.use(VueRouter);
 const ViewUI = require('view-design')
