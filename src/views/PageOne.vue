@@ -89,5 +89,10 @@
 }
 .caro .ivu-carousel-list{
   height: 250px;
+  background-color: aliceblue;
+}
+.ivu-carousel-arrow>*{
+  position: absolute;
+  transform: translate(-50%,-50%);
 }
 </style>
