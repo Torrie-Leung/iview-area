@@ -38,6 +38,7 @@
           </Switch>
         </Col>
       </Row>
+    </Menu>
       <Row>
         <Col span="24">
           <Carousel v-model="carouselValue" loop class="caro" style="height: 300px">
@@ -56,10 +57,30 @@
           </Carousel>
         </Col>
       </Row>
-      
-      
-        
-    </Menu>
+      <Row>
+        <Col span="8">
+          <Circle :percent="100" stroke-color="#5cb85c">
+            <Icon type="ios-checkmark" size="60" style="color:#5cb85c"></Icon>
+          </Circle>
+        </Col>
+        <Col span="8">
+          <Circle :percent="circlePer1" :stroke-color="color">
+            <Icon v-if="circlePer1 == 100" type="ios-checkmark" size="60" style="color:#5cb85c"></Icon>
+            <span v-else class="demo-Circle-inner" style="font-size:24px">{{this.circlePer1}}%</span>
+          </Circle>
+          <ButtonGroup size="small">
+            <Button icon="ios-add" @click="add"></Button>
+            <Button icon="ios-remove" @click="minus"></Button>
+          </ButtonGroup>
+        </Col>
+        <Col span="8">
+          <Circle :percent="35" stroke-color="#ff5500">
+            <span class="demo-Circle-inner">
+              <Icon type="ios-close" size="50" style="color:#ff5500"></Icon>
+            </span>
+          </Circle>
+        </Col>
+      </Row>
   </div>
 </template>
 
@@ -70,7 +91,8 @@
       return {
         theme: 'dark',
         switchDefault: false,
-        carouselValue: 0
+        carouselValue: 0,
+        circlePer1: 80
       }
     },
     methods: {
@@ -78,6 +100,23 @@
         // console.log('status-',status)
         // console.log(this.switchDefault)
         this.theme = !status ? 'dark' : 'light'
+      },
+      add(){
+        if(this.circlePer1 >= 100) return
+        this.circlePer1 += 10
+      },
+      minus(){
+        if(this.circlePer1 <= 0) return
+        this.circlePer1 -= 10
+      }
+    },
+    computed: {
+      color() {
+        let color = '#2db7f5'
+        if (this.circlePer1 == 100) {
+          color = '#5cb85c'
+        }
+        return color
       }
     },
   }
@@ -87,12 +126,16 @@
 .ivu-col-span-2 {
   padding-left: 25px;
 }
-.caro .ivu-carousel-list{
+.caro .ivu-carousel-list, .demo-carousel{
   height: 250px;
   background-color: aliceblue;
+  text-align: center;
 }
 .ivu-carousel-arrow>*{
   position: absolute;
   transform: translate(-50%,-50%);
+}
+.ivu-col-span-8{
+  text-align: center;
 }
 </style>
