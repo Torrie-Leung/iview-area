@@ -64,7 +64,7 @@
           </Circle>
         </Col>
         <Col span="8">
-          <Circle :percent="circlePer1" :stroke-color="color">
+          <Circle :percent="circlePer1" :stroke-color="color" dashboard>
             <Icon v-if="circlePer1 == 100" type="ios-checkmark" size="60" style="color:#5cb85c"></Icon>
             <span v-else class="demo-Circle-inner" style="font-size:24px">{{this.circlePer1}}%</span>
           </Circle>
@@ -81,6 +81,11 @@
           </Circle>
         </Col>
       </Row>
+      <div class="test to-right"></div>
+      <div class="ff">
+        <div class="it"></div>
+        <div class="it1"></div>
+      </div>
   </div>
 </template>
 
@@ -137,5 +142,64 @@
 }
 .ivu-col-span-8{
   text-align: center;
+}
+.test{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background: aquamarine;
+  margin-left: 30px;
+}
+.test::before{
+  display: block;
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: darkcyan;
+  left: -10px;
+}
+.test.to-right::before{
+  display: block;
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: darkcyan;
+  left: 100%;
+}
+.test::after{
+  display: block;
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: darkcyan;
+  left: 10px;
+  bottom: 10px;
+}
+.test.to-right::after{
+  display: block;
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: darkcyan;
+  left: auto;
+  right: 10px;
+}
+.ff{
+  display: flex;
+  margin-top: 10px;
+  // justify-content: space-between;
+}
+.it, .it1{
+  width: 100px;
+  height: 100px;
+  background: aquamarine;
+}
+.it1{
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
